@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="content">
+        <div class="flex-top">
+            <div>
+                <div class="flex-item-1">
+                    <!-- Avartar -->
+                    <div class="avatar" id="img_avatar"></div>
+                    <div class="noti"><p>2</p></div>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/aeaey_spnt.a/" rel="noopener" target="_blank" class="username_link"><p class="username" id="username">Username, Gallery</p></a>
+                    
+                </div>
+            </div>
+            <div class="flex-item-2">
+                <!-- Input -->
+                <div><label>Set the username </label><input type="text" id="new_username" title="Username"> <button onclick="changeUsername()">Set</button></div>
+                <div><label>Set the profile image URL </label><input type="text" id="img_url" title="Profile URL"> <button onclick="changeAvatar()">Set</button></div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item" style="grid-column: span 2 / span 2;"><img src='Picture/Picture6.jpg' width="300"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item" style="grid-row: span 2 / 2 span;"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+        </div>
+    </div>
+    <script>
+        function changeUsername() {
+            new_username = document.getElementById("new_username").value
+            if (new_username == "") {
+                document.getElementById("username").innerHTML = "USERNAME, GALLERY"
+                return
+            }
+            document.getElementById("username").innerHTML = new_username + ", GALLERY"
+        }
+
+        function changeAvatar() {
+            new_avatar = document.getElementById("img_url").value
+            if (new_avatar == "") {
+                document.getElementById("img_avatar").style.backgroundImage = "url(''./man.png'')"
+                alert("Avatar URL cannot empty!!")
+                return
+            }
+            document.getElementById("img_avatar").style.backgroundImage = "url('" + new_avatar + "')"
+        }
+    </script>
+</body>
+
+</html>
